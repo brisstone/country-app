@@ -2,36 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-
-# Country App
+### Country App
 
 ## Overview
 
@@ -60,43 +32,52 @@ git clone https://github.com/brisstone/country-app.git
 cd country-app
 ```
 
-3. Install project dependencies using npm:
+3. Install project dependencies using yarn:
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Usage
 
 ### Development Server
 
-To start the development server and run the app locally, use the following npm command:
+To start the development server and run the app locally, use the following yarn command:
 
 ```bash
-npm start
+yarn start
 ```
 
 The app should now be running at `http://localhost:3000` in your web browser.
 
 ### Storybook
 
-This project uses Storybook for component development and documentation. To launch Storybook, use the following npm command:
+This project uses Storybook for component development and documentation. To launch Storybook, use the following yarn command:
 
 ```bash
-npm run storybook
+yarn run storybook
 ```
 
 Storybook will be accessible at `http://localhost:6006` in your web browser.
 
 ### Building Storybook
 
-To build the Storybook documentation, you can use the following npm command:
+To build the Storybook documentation, you can use the following yarn command:
 
 ```bash
-npm run build-storybook
+yarn run build-storybook
 ```
 
 The built Storybook documentation will be available in the `storybook-static` directory.
+
+### Tests
+
+This project uses React Testing libraries and Jest, use the following yarn command:
+
+```bash
+yarn run test
+```
+
 
 ## Folder Structure
 
@@ -114,9 +95,6 @@ The project structure is organized as follows:
 - Storybook: A tool for building UI component libraries and documenting components.
 - TypeScript: A typed superset of JavaScript for better tooling and development experience.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
@@ -124,4 +102,31 @@ This project is licensed under the [MIT License](LICENSE).
 - GitHub: [Brisstone](https://github.com/brisstone)
 
 
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn run start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `yarn run test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 

@@ -12,14 +12,12 @@ import {
   FormControl,
   InputLabel,
   TableSortLabel,
-  Theme,
   Box,
   createTheme,
 } from "@mui/material";
 
 import { makeStyles, createStyles } from "@mui/styles";
 import TablePagination from "@mui/material/TablePagination";
-
 
 // Define a theme
 const theme = createTheme();
@@ -102,11 +100,11 @@ interface Country {
 
 export interface CountryTableProps {
   data: Country[];
-  defaultFilter?: string; 
+  defaultFilter?: string;
   sortConfig?: {
     key: string;
     direction: string;
-  }; 
+  };
 }
 
 const rowsPerPageOptions = [10, 25, 50]; // Options for rows per page
@@ -115,7 +113,9 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
   const { data, defaultFilter } = props;
 
   // if defaultFilter props is null, make it an empty string
-  const [filterContinent, setFilterContinent] = useState<string>(defaultFilter?? "");
+  const [filterContinent, setFilterContinent] = useState<string>(
+    defaultFilter ?? ""
+  );
   const [filterHasStates, setFilterHasStates] = useState<string>("");
   const [sortConfig, setSortConfig] = useState<{
     key: string;
@@ -164,7 +164,6 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
     return sortedData;
   }, [data, filterContinent, filterHasStates, sortConfig]);
 
-  
   /**
    * Handles sorting of table columns.
    * @param {string} key - The key by which to sort the table.
@@ -189,7 +188,6 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
    * @returns {boolean} True if the table is sorted by the given column; otherwise, false.
    */
   const isSortedBy = (column: string) => column === sortConfig.key;
-  
 
   /**
    * Handles the change of the current page.
@@ -218,10 +216,14 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
     <div className={classes.tableComponentBody}>
       <Box className={classes.filterContainer}>
         <FormControl variant="outlined" className={classes.filterFormControl}>
-          <InputLabel className={classes.filterLabel}>
+          <InputLabel
+            data-testid="filter-continent-label"
+            className={classes.filterLabel}
+          >
             Filter by Continent
           </InputLabel>
           <Select
+            data-testid="filter-continent-dropdown"
             value={filterContinent}
             onChange={(e) => setFilterContinent(e.target.value as string)}
             label="Filter by Continent"
@@ -269,6 +271,7 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
               <TableCell>Code</TableCell>
               <TableCell>
                 <TableSortLabel
+                  data-testid="name-header"
                   active={isSortedBy("nameUn")}
                   direction={sortConfig.direction}
                   onClick={() => handleSort("nameUn")}
@@ -303,7 +306,11 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
             {filteredAndSortedData
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((country, index) => (
-                <TableRow key={country.id} className={classes.tableRow}>
+                <TableRow
+                  key={country.id}
+                  data-testid={`table-row-${index}-nameUn`}
+                  className={classes.tableRow}
+                >
                   <TableCell>{index + 1}</TableCell>
                   <TableCell>{country.id}</TableCell>
                   <TableCell>{country.code}</TableCell>
@@ -316,6 +323,7 @@ const CountryTable: React.FC<CountryTableProps> = (props) => {
         </Table>
       </TableContainer>
       <TablePagination
+        data-test="rows-per-page-select"
         rowsPerPageOptions={rowsPerPageOptions}
         component="div"
         count={filteredAndSortedData.length}
