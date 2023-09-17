@@ -29,18 +29,99 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Country App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Overview
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The "Country App" is a web application that provides information about various countries. It allows users to view and filter countries based on different criteria such as continent and whether a country has states. This documentation provides an overview of the project, its structure, and how to get started.
 
-## Learn More
+## Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Before you begin, ensure you have met the following requirements:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Node.js: `>=16.18.1`
+- npm: `>=8.19.2`
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/brisstone/country-app.git
+```
+
+2. Change your working directory to the project folder:
+
+```bash
+cd country-app
+```
+
+3. Install project dependencies using npm:
+
+```bash
+npm install
+```
+
+## Usage
+
+### Development Server
+
+To start the development server and run the app locally, use the following npm command:
+
+```bash
+npm start
+```
+
+The app should now be running at `http://localhost:3000` in your web browser.
+
+### Storybook
+
+This project uses Storybook for component development and documentation. To launch Storybook, use the following npm command:
+
+```bash
+npm run storybook
+```
+
+Storybook will be accessible at `http://localhost:6006` in your web browser.
+
+### Building Storybook
+
+To build the Storybook documentation, you can use the following npm command:
+
+```bash
+npm run build-storybook
+```
+
+The built Storybook documentation will be available in the `storybook-static` directory.
+
+## Folder Structure
+
+The project structure is organized as follows:
+
+- `src`: Contains the source code for the application.
+- `src/Components`: Contains React components used in the app.
+- `src/stories`: Contains Storybook stories for components.
+- `public`: Contains public assets like HTML and images.
+
+## Dependencies
+
+- React: A JavaScript library for building user interfaces.
+- Material-UI (MUI): A popular React UI framework.
+- Storybook: A tool for building UI component libraries and documenting components.
+- TypeScript: A typed superset of JavaScript for better tooling and development experience.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Author
+
+- OKOLI JOHNSON CHINONSO
+- GitHub: [Brisstone](https://github.com/brisstone)
+
+
+
